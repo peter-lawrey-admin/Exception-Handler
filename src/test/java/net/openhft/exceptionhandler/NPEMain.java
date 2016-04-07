@@ -5,6 +5,7 @@ package net.openhft.exceptionhandler;
  */
 public class NPEMain {
     public static void main(String[] args) {
-        new StackoverflowExceptionHandler().onException("NPE", new NullPointerException());
+        GoogleExceptionHandler.INSTANCE.onException("I don't know what", new NullPointerException());
+//        StackoverflowExceptionHandler.INSTANCE.onException("I don't know what", new NullPointerException());
     }
 }

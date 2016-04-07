@@ -28,16 +28,16 @@ public class URIEncoder {
     private static void appendEscaped(StringBuilder uri, char c) {
         if (c <= 0xFF) {
             uri.append("%");
-            uri.append(hex[c >> 8]);
+            uri.append(hex[(c >> 4) & 0xF]);
             uri.append(hex[c & 0xF]);
             return;
         }
         // unicode
         uri.append('\\');
         uri.append('u');
-        uri.append(hex[(c >> 24) & 0xF]);
-        uri.append(hex[(c >> 16) & 0xF]);
+        uri.append(hex[(c >> 12) & 0xF]);
         uri.append(hex[(c >> 8) & 0xF]);
+        uri.append(hex[(c >> 4) & 0xF]);
         uri.append(hex[c & 0xF]);
     }
 }

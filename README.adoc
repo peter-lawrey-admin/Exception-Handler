@@ -14,7 +14,7 @@ handler.onException("?", new NullPointerException());
 
 This will log to the JDK logger or, use stackoverflow when run in Debug mode, if the desktop is available.
 
-=== Configuring Stackoverflow
+=== Configuring Stackoverflow and Google
 
 You can redirect specific exceptions to chosen pages by updating the `Stackoverflow.properties` on your class path.
 
@@ -23,3 +23,17 @@ You can redirect specific exceptions to chosen pages by updating the `Stackoverf
 baseUri=http://stackoverflow.com/search?q=%5Bjava%5D
 java.lang.NullPointerException=http://stackoverflow.com/questions/218384/what-is-a-null-pointer-exception-and-how-do-i-fix-it
 ----
+
+For google the file is `Google.properties`
+
+NOTE: The version of java you are using is included in the search. e.g.
+
+[source, Java]
+----
+GoogleExceptionHandler.INSTANCE.onException("I don't know what", new NullPointerException());
+----
+
+Opens the following
+
+https://www.google.co.uk/webhp?sourceid=OpenHFT-ExceptionHandler&ion=1&espv=2&ie=UTF-8#safe=strict&q=java+8+java.lang.NullPointerException+I%20don't%20know%20what
+
