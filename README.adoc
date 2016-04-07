@@ -26,7 +26,7 @@ java.lang.NullPointerException=http://stackoverflow.com/questions/218384/what-is
 
 For google the file is `Google.properties`
 
-NOTE: The version of java you are using is included in the search. e.g.
+NOTE: The version of java you are using is included in the search. As this example was run on Java 8, it appears in the search.
 
 [source, Java]
 ----
