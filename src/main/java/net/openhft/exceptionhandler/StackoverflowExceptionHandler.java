@@ -10,6 +10,8 @@ import java.util.Properties;
  * Created by Peter on 07/04/2016.
  */
 public class StackoverflowExceptionHandler implements ExceptionHandler {
+    public static final ExceptionHandler INSTANCE = new StackoverflowExceptionHandler(LoggerExceptionHandler.INSTANCE);
+
     static final Properties PROPERTIES = new Properties();
     private static final String BASE_URI;
 
@@ -25,10 +27,6 @@ public class StackoverflowExceptionHandler implements ExceptionHandler {
     }
 
     final ExceptionHandler fallBack;
-
-    public StackoverflowExceptionHandler() {
-        this.fallBack = LoggerExceptionHandler.INSTANCE;
-    }
 
     public StackoverflowExceptionHandler(ExceptionHandler fallBack) {
         assert fallBack != null;

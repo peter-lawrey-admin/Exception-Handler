@@ -1,0 +1,15 @@
+= Exception Handler library
+
+This library support a variety of a way to handle exceptions.
+
+== Search on StackOverflow when debugging.
+
+.Lookup Stackoverflow when debugging
+[source, java]
+----
+ExceptionHandler handler = new DebugExceptionHandler(LoggerExceptionHandler.INSTANCE, StackoverflowExceptionHandler.INSTANCE);
+
+handler.onException("?", new NullPointerException());
+----
+
+This will log to the JDK logger or, use stackoverflow when run in Debug mode, if the desktop is available.
