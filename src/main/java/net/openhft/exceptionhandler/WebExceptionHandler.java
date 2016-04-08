@@ -42,7 +42,7 @@ public class WebExceptionHandler implements ExceptionHandler {
                         version = parts[1];
                     }
 
-                    uri += "+" + version + "+" + t;
+                    uri += "+" + version + "+" + t.getClass().getName();
                     if (message != null)
                         uri += "+" + URIEncoder.encodeURI(message);
                 }
